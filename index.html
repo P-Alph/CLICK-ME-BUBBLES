@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Important Question 💌</title>
+  <title>A Question Most Fair 💌</title>
   <meta charset="UTF-8">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Georgia", serif;
       background-color: #ffe6eb;
       text-align: center;
       padding-top: 120px;
+      overflow: hidden;
     }
 
     h1 {
-      color: #d6336c;
-      font-size: 40px;
+      color: #7a1335;
+      font-size: 38px;
     }
 
     p {
@@ -24,19 +25,26 @@
     button {
       font-size: 18px;
       padding: 12px 25px;
-      margin: 10px;
+      margin: 15px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      position: relative;
     }
 
     .yes {
-      background-color: #ff4d6d;
+      background-color: #c9184a;
       color: white;
     }
 
     .yes:hover {
-      background-color: #e63956;
+      background-color: #a4133c;
+    }
+
+    .no {
+      background-color: #adb5bd;
+      color: #333;
+      position: absolute;
     }
 
     #gif {
@@ -53,29 +61,33 @@
 
 <body>
 
-  <!-- QUESTION SECTION -->
+  <!-- QUESTION -->
   <div id="question">
-    <h1>Hey Precious❤️</h1>
-    <p>I have an important question for you…</p>
-    <p><strong>Will you be my Valentine?</strong></p>
+    <h1>Hearken, fair one! My Precious Sarah ❤</h1>
+    <p>I bear a question most dear...</p>
+    <p><strong>Wilt thou be mine Valentine?</strong></p>
 
-    <button class="yes" onclick="showGif()">Yes 💖</button>
-    <button class="yes" onclick="showGif()">Obviously 💕</button>
+
+    <button class="yes" onclick="showGif()">Aye 💖</button>
+    <button class="no" id="noBtn">Nay ❌</button>
   </div>
 
-  <!-- GIF SECTION -->
+  <!-- GIF -->
   <div id="gif">
-    <h1>YAY!!! 🥰💘</h1>
-    <p>You just made my day ❤️</p>
+    <h1>Joy unmeasured! 🥰</h1>
+    <p>Thou hast gladdened my very soul ❤️</p>
     <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Happy GIF">
   </div>
 
   <script>
-    function showGif() {
-      document.getElementById("question").style.display = "none";
-      document.getElementById("gif").style.display = "block";
-    }
-  </script>
+    const noBtn = document.getElementById("noBtn");
 
-</body>
-</html>
+    noBtn.addEventListener("mouseover", moveButton);
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
