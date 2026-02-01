@@ -19,7 +19,6 @@
 
     p {
       font-size: 22px;
-      margin-bottom: 30px;
     }
 
     button {
@@ -39,16 +38,44 @@
     .yes:hover {
       background-color: #e63956;
     }
+
+    #gif {
+      display: none;
+      margin-top: 30px;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+    }
   </style>
 </head>
 
 <body>
-  <h1>Hey ❤️</h1>
-  <p>I have an important question for you…</p>
-  <p><strong>Will you be my Valentine?</strong></p>
 
-  <button class="yes">Yes 💖</button>
-  <button class="yes">Obviously 💕</button>
+  <!-- QUESTION SECTION -->
+  <div id="question">
+    <h1>Hey ❤️</h1>
+    <p>I have an important question for you…</p>
+    <p><strong>Will you be my Valentine?</strong></p>
+
+    <button class="yes" onclick="showGif()">Yes 💖</button>
+    <button class="yes" onclick="showGif()">Obviously 💕</button>
+  </div>
+
+  <!-- GIF SECTION -->
+  <div id="gif">
+    <h1>YAY!!! 🥰💘</h1>
+    <p>You just made my day ❤️</p>
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Happy GIF">
+  </div>
+
+  <script>
+    function showGif() {
+      document.getElementById("question").style.display = "none";
+      document.getElementById("gif").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
-
